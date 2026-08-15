@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Haxball RPC",
+  "version": "0.0.1",
+  "description": "Extension for Haxball RPC Server",
+  "permissions": ["storage"],
+  "host_permissions": ["https://*.haxball.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://*.haxball.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["inject.js"],
+      "matches": ["https://*.haxball.com/*"]
+    }
+  ]
+}
